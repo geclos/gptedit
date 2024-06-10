@@ -41,7 +41,6 @@ end
 local function stream_openai_api(prompt, filetype, buffer, row, selection)
   local api_key = os.getenv("OPENAI_API_KEY")
   local user_prompt = build_user_prompt(prompt, filetype, buffer, row, selection)
-
   local body = vim.fn.json_encode({
     model = "gpt-4o",
     messages = {
